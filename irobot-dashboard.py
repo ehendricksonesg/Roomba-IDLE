@@ -72,6 +72,10 @@ Tkinter reference:
 
 
 """
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='(%(threadName)-10s) %(message)s')
+
 
 try:                        # Python 3  # create2api library is not compatible in it's current form
     from tkinter import ttk
@@ -1126,9 +1130,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
 
 from auklet.monitoring import Monitoring
 
-auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTI5YzA3YzQtMzUyOC00NDkwLTkwN2YtOWMxOTgwNWI4ZDU3IiwidXNlcm5hbWUiOiI2MjE3YTllOS1hZTE0LTQ3MzUtYjE3NS05Y2JmMGZiOTQ2ZTMiLCJleHAiOjE1Mjg4MzQ2NjMsImVtYWlsIjoiIn0.y7xW7jdiT1w-OViXZiyeM7gAJK7LJYqlma19ppFCVKA", "kQEjmC8xjvULVqbTqPDWuN")
 
-auklet_monitoring.start()
 
 def main():
 
@@ -1145,6 +1147,8 @@ def main():
     
 
 if __name__ == '__main__': 
+    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOGVlOGJkNDYtNWQ1Mi00NzU1LTg2M2QtYmNkZjZmYjc0NjJkIiwidXNlcm5hbWUiOiIxY2Q2MzM0NS1jMDg0LTQ0NjktODE5ZS02MGZiZDdiZDhhODgiLCJleHAiOjE1MzAyMDIwMTEsImVtYWlsIjoiIn0.Fn_MPs5h5mDDrHBm0cmvrThHidzwb8nylS8Y1Sfw_t4", "Do8PKLsFzsYoBwAEj8ChsH", base_url="https://api-staging.auklet.io/", monitoring=True)
+    auklet_monitoring.start()
     main()
+    auklet_monitoring.stop()
 
-auklet_monitoring.stop()
