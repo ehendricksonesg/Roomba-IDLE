@@ -96,7 +96,7 @@ except ImportError:         # Python 2
     import threading        # used to timeout Create2 function calls if iRobot has gone to sleep
     import math             # direction indicator (polygon) rotation
     import RPi.GPIO as GPIO # BRC pin pulse
-    from battery_pull import bigbatts
+#    from battery_pull import bigbatts
 
 
 class Dashboard():
@@ -924,6 +924,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.current.set(str(abs(bot.sensor_state['current'])))
                         dashboard.capacity.set(str(bot.sensor_state['battery charge']))
                         dashboard.temp.set(str(bot.sensor_state['temperature']))
+                        print(str(bot.sensor_state['battery charge']))
                                 
                         if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
                             dashboard.pbCurrent.configure(style="orange.Horizontal.TProgressbar")
@@ -1140,7 +1141,7 @@ def main():
     
     dashboard=Dashboard(root)                       # paint GUI
     RetrieveCreateTelemetrySensors(dashboard)       # comms with iRobot
-    bigbatts()
+    #bigbatts()
 
     # root.update_idletasks() # does not block code execution
     # root.update([msecs, function]) is a loop to run function after every msec
