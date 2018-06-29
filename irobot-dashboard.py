@@ -72,9 +72,9 @@ Tkinter reference:
 
 
 """
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='(%(threadName)-10s) %(message)s')
+#import logging             # Activates the logging feature of Auklet
+#logging.basicConfig(level=logging.DEBUG,
+#                    format='(%(threadName)-10s) %(message)s')
 
 
 try:                        # Python 3  # create2api library is not compatible in it's current form
