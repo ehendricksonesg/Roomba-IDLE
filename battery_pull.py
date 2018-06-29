@@ -15,7 +15,6 @@ except ImportError:  # Python 2
     import tkFont as font  # button font sizing
     import json  # Create2API JSON file
     import create2api  # change serial port to '/dev/ttyAMA0'
-    import irobot_dashboard
     import datetime  # time comparison for Create2 sleep prevention routine
     import time  # sleep function
     import threading  # used to timeout Create2 function calls if iRobot has gone to sleep
