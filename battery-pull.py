@@ -21,7 +21,12 @@ except ImportError:  # Python 2
     import math  # direction indicator (polygon) rotation
     import RPi.GPIO as GPIO  # BRC pin pulse
 
+bot = create2api.Create2()
 
 while True:
-    print("yes")
+    print("yes" + str(bot.sensor_state['battery charge']) + "yes")
     time.sleep(1)
+
+
+# create2api.sensor_data['battery capacity']
+# str(bot.sensor_state['battery charge'])
