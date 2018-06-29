@@ -24,7 +24,7 @@ except ImportError:  # Python 2
 bot = create2api.Create2()
 
 while True:
-    print("yes" + str(bot.sensor_state['battery charge']) + "yes")
+    print("yes" + bot.sensor_state['battery charge'] + "yes")
     time.sleep(1)
 
 
