@@ -928,11 +928,11 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         # Below outputs the value of battery charge
                         # csvfile = "</home/pi/roomba/IDLE>"
                         with open('battery.csv', "a") as output:
+                            bat = str(bot.sensor_state['battery charge'])
                             fieldnames = ['var1']
                             writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
-                            bat = str(bot.sensor_state['battery charge'])
-                            writer.writeheader()
-                            writer.writerow({bat})
+                            # writer.writeheader()
+                            writer.writerow({'var1': bat})
                         # print(str(bot.sensor_state['battery charge']))
                                 
                         if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
