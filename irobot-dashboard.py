@@ -927,7 +927,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.temp.set(str(bot.sensor_state['temperature']))
                         # Below outputs the value of battery charge
                         # csvfile = "</home/pi/roomba/IDLE>"
-                        with open('battery.csv', "w") as output:
+                        with open('battery.csv', "a") as output:
                             fieldnames = ['var1']
                             writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                             bat = str(bot.sensor_state['battery charge'])
