@@ -1021,7 +1021,7 @@ class WavefrontMachine:
                     
                 # does irobot needs to counter rotate after a prior bump rotation
                 # or is irobot running adjacent a wall
-"""                if counter_rotate_adjustment:
+                """if counter_rotate_adjustment:
                     bot.digit_led_ascii(' ADJ')
                     print "Orientation adjustment..."
                     self.irobot_rotate(bot, int(rotation_angle * -1 / 2)) # counter rotate
@@ -1033,8 +1033,8 @@ class WavefrontMachine:
                 elif adjacent_wall == 'Starboard':
                     bot.digit_led_ascii('HUG-')
                     print "Hug right wall..."
-                    self.irobot_rotate(bot, -2) # rotate clockwise
-"""
+                    self.irobot_rotate(bot, -2) # rotate clockwise"""
+
                 # navigate irobot ahead one unit
                 bot.digit_led_ascii('FWRD')
                 print "Drive forward..."
