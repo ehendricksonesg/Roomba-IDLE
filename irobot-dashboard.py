@@ -96,6 +96,7 @@ except ImportError:         # Python 2
     import threading        # used to timeout Create2 function calls if iRobot has gone to sleep
     import math             # direction indicator (polygon) rotation
     import RPi.GPIO as GPIO # BRC pin pulse
+    import csv
 #    from battery_pull import bigbatts
 
 
@@ -924,7 +925,15 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.current.set(str(abs(bot.sensor_state['current'])))
                         dashboard.capacity.set(str(bot.sensor_state['battery charge']))
                         dashboard.temp.set(str(bot.sensor_state['temperature']))
-                        print(str(bot.sensor_state['battery charge']))
+                        # Below outputs the value of battery charge
+                        # csvfile = "</home/pi/roomba/IDLE>"
+                        with open('battery.csv', "w") as output:
+                            fieldnames = ['var1']
+                            writer = csv.DictWriter(output, fieldnames=fieldnames)
+                            bat = str(bot.sensor_state['battery charge'])
+                            writer.writeheader()
+                            writer.writerow({'var1': bat})
+                        # print(str(bot.sensor_state['battery charge']))
                                 
                         if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
                             dashboard.pbCurrent.configure(style="orange.Horizontal.TProgressbar")
