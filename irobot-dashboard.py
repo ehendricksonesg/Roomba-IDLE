@@ -932,7 +932,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                             writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                             bat = str(bot.sensor_state['battery charge'])
                             writer.writeheader()
-                            writer.writerow({'var1': bat})
+                            writer.writerow({bat})
                         # print(str(bot.sensor_state['battery charge']))
                                 
                         if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
