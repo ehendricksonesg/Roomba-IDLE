@@ -497,7 +497,7 @@ class Dashboard():
         
         self.master.geometry('980x670+20+50')
         self.master.wm_title("iRobot Navigate")
-        self.master.configure(background='black)
+        self.master.configure(background='black')
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
 
         s = ttk.Style()
