@@ -887,8 +887,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         # (BRC pin pulse to prevent sleep not working for me)
                         if datetime.datetime.now() > BtnTimer:
                             GPIO.output(BRCpin, GPIO.LOW)
-                            print
-                            'BRC pin pulse'
+                            print("BRC pin pulse")
                             BtnTimer = datetime.datetime.now() + datetime.timedelta(seconds=30)
                             if docked:
                                 print
@@ -904,7 +903,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.TxVal.set(str(int(dashboard.TxVal.get()) + 80))  # add 80 packets to TxVal
 
                         # OI MODE
-                        if bot.sensor_state['oi mode'] == create_dict["PASSIVE"]:
+                        """if bot.sensor_state['oi mode'] == create_dict["PASSIVE"]:
                             dashboard.mode.set("Passive")
                         elif bot.sensor_state['oi mode'] == create_dict["SAFE"]:
                             dashboard.mode.set("Safe")
@@ -925,7 +924,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                                 bot.digit_led_ascii('DOCK')  # clear DSEG before Passive mode
                                 bot.start()
                                 bot.seek_dock()
-                            dashboard.modeflag.set(False)
+                            dashboard.modeflag.set(False)"""
 
                         # BATTERY
                         dashboard.voltage.set(str(round(bot.sensor_state['voltage'] / 1000, 1)))
