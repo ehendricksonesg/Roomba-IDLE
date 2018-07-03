@@ -284,9 +284,9 @@ class Dashboard:
 
     def paintGUI(self):
         # Window creation
-        self.master.geometry('300x300')
+        self.master.geometry('600x600')
         self.master.wm_title("Roomba Drain")
-        self.master.configure(background='aquamarine')
+        self.master.configure(background='white')
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
         # Styles
         s = ttk.Style()
@@ -306,63 +306,63 @@ class Dashboard:
         Label(frame, text="BATTERY", background='white').pack()
         label = Label(frame, text="V", background='white')
         label.pack()
-        # label.place(x=230, y=32)
+        label.place(x=230, y=32)
         self.lblCurrent = Label(frame, text="mA", background='white')
         self.lblCurrent.pack()
-        # self.lblCurrent.place(x=230, y=52)
+        self.lblCurrent.place(x=230, y=52)
         label = Label(frame, text="mAH Capacity", background='white')
         label.pack()
-        # label.place(x=230, y=72)
+        label.place(x=230, y=72)
         label = Label(frame, text="Temp 'C", background='white')
         label.pack()
-        # label.place(x=230, y=92)
+        label.place(x=230, y=92)
 
         # telemetry display
         label = Label(frame, textvariable=self.voltage, font=("DSEG7 Classic", 16), anchor=E, background='white',
                       width=4)
         label.pack()
-        # label.place(x=170, y=30)
+        label.place(x=170, y=30)
         label = Label(frame, textvariable=self.current, font=("DSEG7 Classic", 16), anchor=E, background='white',
                       width=4)
         label.pack()
-        # label.place(x=170, y=50)
+        label.place(x=170, y=50)
         label = Label(frame, textvariable=self.capacity, font=("DSEG7 Classic", 16), anchor=E, background='white',
                       width=4)
         label.pack()
-        # label.place(x=170, y=70)
+        label.place(x=170, y=70)
         label = Label(frame, textvariable=self.temp, font=("DSEG7 Classic", 16), anchor=E, background='white', width=4)
         label.pack()
-        # label.place(x=170, y=90)
+        label.place(x=170, y=90)
 
         # progress bars
         pb = ttk.Progressbar(frame, variable=self.voltage, style="orange.Horizontal.TProgressbar", orient="horizontal",
                              length=150, mode="determinate")
         pb["maximum"] = 20
-        # pb["value"] = 15
+        pb["value"] = 15
         pb.pack()
-        # pb.place(x=10, y=31)
+        pb.place(x=10, y=31)
         self.pbCurrent = ttk.Progressbar(frame, variable=self.current, style="orange.Horizontal.TProgressbar",
                                          orient="horizontal", length=150, mode="determinate")
         self.pbCurrent["maximum"] = 1000
-        # self.pbCurrent["value"] = 600
+        self.pbCurrent["value"] = 600
         self.pbCurrent.pack()
-        # self.pbCurrent.place(x=10, y=51)
+        self.pbCurrent.place(x=10, y=51)
         self.pbCapacity = ttk.Progressbar(frame, variable=self.capacity, style="orange.Horizontal.TProgressbar",
                                           orient="horizontal", length=150, mode="determinate")
         self.pbCapacity["maximum"] = 3000
-        # self.pbCapacity["value"] = 2000
+        self.pbCapacity["value"] = 2000
         self.pbCapacity.pack()
-        # self.pbCapacity.place(x=10, y=71)
+        self.pbCapacity.place(x=10, y=71)
         pb = ttk.Progressbar(frame, variable=self.temp, style="orange.Horizontal.TProgressbar", orient="horizontal",
                              length=150, mode="determinate")
         pb["maximum"] = 50
-        # pb["value"] = 40
+        pb["value"] = 40
         pb.pack()
-        # pb.place(x=10, y=91)
+        pb.place(x=10, y=91)
 
         # frame.pack()
         frame.pack_propagate(0)  # prevents frame autofit
-        # frame.place(x=10, y=10)
+        frame.place(x=10, y=10)
 
 
 def main():
