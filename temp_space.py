@@ -370,7 +370,7 @@ def main():
     root = Tk()
 
     dashboard = Dashboard(root)  # paint GUI
-    RetrieveCreateTelemetrySensors(dashboard)  # comms with iRobot
+    # RetrieveCreateTelemetrySensors(dashboard)  # comms with iRobot
     # bigbatts()
 
     # root.update_idletasks() # does not block code execution
