@@ -303,17 +303,17 @@ class Dashboard:
         frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
 
         # labels
-        Label(frame, text="BATTERY", background='white').pack()
-        label = Label(frame, text="V", background='white')
+        Label(frame, text="BATTERY", background='tan').pack()
+        label = Label(frame, text="V", background='grey')
         label.pack()
         label.place(x=230, y=32)
-        self.lblCurrent = Label(frame, text="mA", background='white')
+        self.lblCurrent = Label(frame, text="mA", background='grey')
         self.lblCurrent.pack()
         self.lblCurrent.place(x=230, y=52)
-        label = Label(frame, text="mAH Capacity", background='white')
+        label = Label(frame, text="mAH Capacity", background='grey')
         label.pack()
         label.place(x=230, y=72)
-        label = Label(frame, text="Temp 'C", background='white')
+        label = Label(frame, text="Temp 'C", background='grey')
         label.pack()
         label.place(x=230, y=92)
 
