@@ -754,6 +754,28 @@ class Dashboard():
             self.rbcomms.configure(state=DISABLED)
 
 
+def timelimit(timeout, func, args=(), kwargs={}):
+    """ Run func with the given timeout. If func didn't finish running
+        within the timeout, raise TimeLimitExpired
+    """
+
+    class FuncThread(threading.Thread):
+        def __init__(self):
+            threading.Thread.__init__(self)
+            self.result = None
+
+        def run(self):
+            self.result = func(*args, **kwargs)
+
+    it = FuncThread()
+    it.start()
+    it.join(timeout)
+    if it.isAlive():
+        return False
+    else:
+        return True
+
+
 def RetrieveCreateTelemetrySensors(dashboard):
     create_data = """
                   {"OFF" : 0,
