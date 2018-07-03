@@ -940,7 +940,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                             writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                             # writer.writeheader()
                             writer.writerow({'var1': bat})
-                        # print(str(bot.sensor_state['battery charge']))
+                        print(str(bot.sensor_state['battery charge']))
 
                         """if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
                             dashboard.pbCurrent.configure(style="orange.Horizontal.TProgressbar")
