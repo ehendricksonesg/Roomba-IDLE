@@ -20,6 +20,7 @@ except ImportError:  # Python 2
     import time  # sleep function
     import threading  # used to timeout Create2 function calls if iRobot has gone to sleep
     import RPi.GPIO as GPIO  # BRC pin pulse
+    import csv
 
 
 class Dashboard():
