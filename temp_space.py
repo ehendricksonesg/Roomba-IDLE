@@ -284,7 +284,7 @@ class Dashboard:
 
     def paintGUI(self):
         # Window creation
-        self.master.geometry('300x000')
+        self.master.geometry('300x300')
         self.master.wm_title("Roomba Drain")
         self.master.configure(background='aquamarine')
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
@@ -370,7 +370,7 @@ def main():
     root = Tk()
 
     dashboard = Dashboard(root)  # paint GUI
-    # RetrieveCreateTelemetrySensors(dashboard)  # comms with iRobot
+    RetrieveCreateTelemetrySensors(dashboard)  # comms with iRobot
     # bigbatts()
 
     # root.update_idletasks() # does not block code execution
