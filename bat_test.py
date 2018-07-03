@@ -903,7 +903,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
 
                         dashboard.TxVal.set(str(int(dashboard.TxVal.get()) + 80))  # add 80 packets to TxVal
 
-                        # OI MODE
+                        """"# OI MODE
                         if bot.sensor_state['oi mode'] == create_dict["PASSIVE"]:
                             dashboard.mode.set("Passive")
                         elif bot.sensor_state['oi mode'] == create_dict["SAFE"]:
@@ -931,7 +931,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.voltage.set(str(round(bot.sensor_state['voltage'] / 1000, 1)))
                         dashboard.current.set(str(abs(bot.sensor_state['current'])))
                         dashboard.capacity.set(str(bot.sensor_state['battery charge']))
-                        dashboard.temp.set(str(bot.sensor_state['temperature']))
+                        dashboard.temp.set(str(bot.sensor_state['temperature']))"""
                         # Below outputs the value of battery charge
                         # csvfile = "</home/pi/roomba/IDLE>"
                         with open('battery.csv', "a") as output:
@@ -942,7 +942,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                             writer.writerow({'var1': bat})
                         # print(str(bot.sensor_state['battery charge']))
 
-                        if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
+                        """if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
                             dashboard.pbCurrent.configure(style="orange.Horizontal.TProgressbar")
                             dashboard.lblCurrent.configure(text="mA Load")
                             battcharging = False
@@ -1120,7 +1120,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         elif dashboard.ledsource.get() == 'mode':
                             bot.digit_led_ascii(dashboard.mode.get()[:4].rjust(4))  # rjustify and pad to 4 chars
 
-                        dashboard.master.update()  # inner loop to update dashboard telemetry
+                        dashboard.master.update()  # inner loop to update dashboard telemetry"""
 
                 except Exception:  # , e:
                     print
