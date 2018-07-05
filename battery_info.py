@@ -1,6 +1,8 @@
 """
 Script written to test ESG auklet's impact on battery performance.
-A large portion of this code was taken from irobot-navigate by Neil Littler.
+A large portion of this code was taken from irobot-dashboard by Neil Littler.
+It has been heavily edited in order to change the core functionality. The primary code retained was that which:
+communicates with the Roomba, creates the Dashboard class, and defines the timelimit module.
 """
 try:  # Python 3  # create2api library is not compatible in it's current form
     from tkinter import ttk
@@ -284,7 +286,8 @@ class Dashboard():
         self.exitflag = False  # Exit program flag
 
     def paintGUI(self):
-
+        """Most of te old functionality has been commented out. This script is meant to provide battery information
+           only, so the code has been edited to reflect that."""
         self.master.geometry('980x670+20+50')
         self.master.wm_title("iRobot Dashboard")
         self.master.configure(background='white')
@@ -365,7 +368,7 @@ class Dashboard():
         frame.pack_propagate(0)  # prevents frame autofit
         frame.place(x=10, y=10)
 
-        # MIDDLE LEFT FRAME - MOTORS
+        """# MIDDLE LEFT FRAME - MOTORS
         frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
 
         # labels
@@ -408,9 +411,9 @@ class Dashboard():
 
         # frame.pack()
         frame.pack_propagate(0)  # prevents frame autofit
-        frame.place(x=10, y=150)
+        frame.place(x=10, y=150)"""
 
-        # TOP RIGHT FRAME - DATA LINK
+        """# TOP RIGHT FRAME - DATA LINK
         frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
 
         # labels
@@ -449,9 +452,9 @@ class Dashboard():
 
         # frame.pack()
         frame.pack_propagate(0)  # prevents frame autofit
-        frame.place(x=640, y=10)
+        frame.place(x=640, y=10)"""
 
-        # MIDDLE RIGHT FRAME - DRIVE
+        """# MIDDLE RIGHT FRAME - DRIVE
         frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
 
         # labels
@@ -507,9 +510,9 @@ class Dashboard():
 
         # frame.pack()
         frame.pack_propagate(0)  # prevents frame autofit
-        frame.place(x=640, y=150)
+        frame.place(x=640, y=150)"""
 
-        # BOTTOM FRAME - SENSORS
+        """# BOTTOM FRAME - SENSORS
         frame = Frame(self.master, bd=1, width=960, height=280, background='white', relief=GROOVE)
 
         # labels
@@ -752,7 +755,7 @@ class Dashboard():
             self.rbcomms.configure(state=NORMAL, selectcolor='red', foreground='red')
             self.rbcomms.select()
         elif flag == -1:  # for flashing radio button
-            self.rbcomms.configure(state=DISABLED)
+            self.rbcomms.configure(state=DISABLED)"""
 
 
 def timelimit(timeout, func, args=(), kwargs={}):
