@@ -745,7 +745,7 @@ class Dashboard():
         self.rbcr.configure(state=DISABLED)
         self.rbcfr.configure(state=DISABLED)
         self.rbw.configure(state=DISABLED)
-        self.rbvw.configure(state=DISABLED)
+        self.rbvw.configure(state=DISABLED)"""
 
     def comms_check(self, flag):
         if flag == 1:  # have comms
@@ -755,7 +755,7 @@ class Dashboard():
             self.rbcomms.configure(state=NORMAL, selectcolor='red', foreground='red')
             self.rbcomms.select()
         elif flag == -1:  # for flashing radio button
-            self.rbcomms.configure(state=DISABLED)"""
+            self.rbcomms.configure(state=DISABLED)
 
 
 def timelimit(timeout, func, args=(), kwargs={}):
