@@ -944,7 +944,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                             writer.writerow({'var1': bat})
                         print(str(bot.sensor_state['battery charge']))
 
-                        """if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
+                        if bot.sensor_state['charging state'] == create_dict["NOT CHARGING"]:
                             dashboard.pbCurrent.configure(style="orange.Horizontal.TProgressbar")
                             dashboard.lblCurrent.configure(text="mA Load")
                             battcharging = False
@@ -1007,7 +1007,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         else:
                             dashboard.rbdr.configure(state=DISABLED)
 
-                        # MOTORS
+                        """# MOTORS
                         dashboard.leftmotor.set(str(bot.sensor_state['left motor current']))
                         dashboard.rightmotor.set(str(bot.sensor_state['right motor current']))
 
