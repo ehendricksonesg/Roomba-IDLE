@@ -1142,7 +1142,6 @@ def RetrieveCreateTelemetrySensors(dashboard):
 from auklet.monitoring import Monitoring
 
 
-
 def main():
 
     # declare objects
@@ -1158,9 +1157,10 @@ def main():
     root.mainloop() # blocks. Anything after mainloop() will only be executed after the window is destroyed
     
 
-if __name__ == '__main__': 
-    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOGVlOGJkNDYtNWQ1Mi00NzU1LTg2M2QtYmNkZjZmYjc0NjJkIiwidXNlcm5hbWUiOiIxY2Q2MzM0NS1jMDg0LTQ0NjktODE5ZS02MGZiZDdiZDhhODgiLCJleHAiOjE1MzAyMDIwMTEsImVtYWlsIjoiIn0.Fn_MPs5h5mDDrHBm0cmvrThHidzwb8nylS8Y1Sfw_t4", "Do8PKLsFzsYoBwAEj8ChsH", base_url="https://api-staging.auklet.io/", monitoring=True)
+if __name__ == '__main__':
+    auklet_monitoring = Monitoring(
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNzQ4YmRiMzctNzNlYS00ODI2LWE0YWQtOTE1ZmI3ZDBlZjA5IiwidXNlcm5hbWUiOiJhNjZmOWVlYy0xYWE0LTRkZDUtOWJhYi0xODJmYjEwZjA1MGMiLCJleHAiOjE1MzA4MjM5ODEsImVtYWlsIjoiIn0.VFoglG5vhF7ZkamQ3mwlmqncLbdn3TWhQHF1J2BiYzA",
+        "RCEBTnxx8Bdx8FonjGBfzX")
     auklet_monitoring.start()
     main()
     auklet_monitoring.stop()
-
