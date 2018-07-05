@@ -690,7 +690,7 @@ class Dashboard():
         self.bearingcentre = (17.5, 18.5)
         self.bearingxy = [(10, 30), (17.5, 5), (25, 30)]
         self.bearing = self.canvas.create_polygon(self.bearingxy, fill='black')
-        # self.canvas.coords(self.bearing, (0,0,10,25,20,0)) # change direction
+        # self.canvas.coords(self.bearing, (0,0,10,25,20,0)) # change direction"""
 
         # radio buttons
         self.rbul = Radiobutton(self.master, state=DISABLED, background='white', value=1, relief=FLAT,
@@ -745,7 +745,7 @@ class Dashboard():
         self.rbcr.configure(state=DISABLED)
         self.rbcfr.configure(state=DISABLED)
         self.rbw.configure(state=DISABLED)
-        self.rbvw.configure(state=DISABLED)"""
+        self.rbvw.configure(state=DISABLED)
 
     def comms_check(self, flag):
         if flag == 1:  # have comms
