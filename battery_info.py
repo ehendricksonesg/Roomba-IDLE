@@ -413,8 +413,8 @@ class Dashboard():
         frame.pack_propagate(0)  # prevents frame autofit
         frame.place(x=10, y=150)"""
 
-        """# TOP RIGHT FRAME - DATA LINK
-        frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
+        # TOP RIGHT FRAME - DATA LINK
+        # frame = Frame(self.master, bd=1, width=330, height=130, background='white', relief=GROOVE)
 
         # labels
         Label(frame, text="DATA LINK", background='white').pack()
@@ -424,7 +424,7 @@ class Dashboard():
         self.rbcomms.pack()
         self.rbcomms.place(x=208, y=1)
 
-        label = Label(frame, text="OI Mode", background='white')
+        """label = Label(frame, text="OI Mode", background='white')
         label.pack()
         label.place(x=10, y=35)
         label = Label(frame, text="Change OI Mode", background='white')
