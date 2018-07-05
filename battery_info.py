@@ -721,7 +721,7 @@ class Dashboard():
         self.rbdl.select()
         self.rbdr.configure(state=NORMAL)
         self.rbdr.select()
-        self.rbcl.configure(state=NORMAL)
+        """self.rbcl.configure(state=NORMAL)
         self.rbcl.select()
         self.rbcfl.configure(state=NORMAL)
         self.rbcfl.select()
@@ -732,7 +732,7 @@ class Dashboard():
         self.rbw.configure(state=NORMAL)
         self.rbw.select()
         self.rbvw.configure(state=NORMAL)
-        self.rbvw.select()
+        self.rbvw.select()"""
         # TxVal.set("ABCDEFGHIJK")
 
         self.master.update()
@@ -740,12 +740,12 @@ class Dashboard():
         self.rbur.configure(state=DISABLED)
         self.rbdl.configure(state=DISABLED)
         self.rbdr.configure(state=DISABLED)
-        self.rbcl.configure(state=DISABLED)
+        """self.rbcl.configure(state=DISABLED)
         self.rbcfl.configure(state=DISABLED)
         self.rbcr.configure(state=DISABLED)
         self.rbcfr.configure(state=DISABLED)
         self.rbw.configure(state=DISABLED)
-        self.rbvw.configure(state=DISABLED)
+        self.rbvw.configure(state=DISABLED)"""
 
     def comms_check(self, flag):
         if flag == 1:  # have comms
