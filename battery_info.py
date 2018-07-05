@@ -982,7 +982,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         else:
                             docked = False
 
-                        """# BUMPERS AND WHEEL DROP
+                        # BUMPERS AND WHEEL DROP
                         if bot.sensor_state['wheel drop and bumps']['bump left'] == True:
                             dashboard.rbul.configure(state=NORMAL)
                             dashboard.rbul.select()
@@ -1005,7 +1005,7 @@ def RetrieveCreateTelemetrySensors(dashboard):
                             dashboard.rbdr.configure(state=NORMAL)
                             dashboard.rbdr.select()
                         else:
-                            dashboard.rbdr.configure(state=DISABLED)"""
+                            dashboard.rbdr.configure(state=DISABLED)
 
                         """# MOTORS
                         dashboard.leftmotor.set(str(bot.sensor_state['left motor current']))
