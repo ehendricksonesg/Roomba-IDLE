@@ -97,7 +97,7 @@ except ImportError:         # Python 2
     import math             # direction indicator (polygon) rotation
     import RPi.GPIO as GPIO # BRC pin pulse
     import csv
-#    from battery_pull import bigbatts
+    from auklet.monitoring import Monitoring
 
 
 class Dashboard():
@@ -1139,9 +1139,6 @@ def RetrieveCreateTelemetrySensors(dashboard):
     dashboard.master.destroy()  # exitflag = True
 
 
-from auklet.monitoring import Monitoring
-
-
 def main():
 
     # declare objects
@@ -1159,8 +1156,8 @@ def main():
 
 if __name__ == '__main__':
     auklet_monitoring = Monitoring(
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNzQ4YmRiMzctNzNlYS00ODI2LWE0YWQtOTE1ZmI3ZDBlZjA5IiwidXNlcm5hbWUiOiJhNjZmOWVlYy0xYWE0LTRkZDUtOWJhYi0xODJmYjEwZjA1MGMiLCJleHAiOjE1MzA4MjM5ODEsImVtYWlsIjoiIn0.VFoglG5vhF7ZkamQ3mwlmqncLbdn3TWhQHF1J2BiYzA",
-        "RCEBTnxx8Bdx8FonjGBfzX", monitoring=True)
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYzFlZTA3MDQtNmY4Mi00NGMyLTg2NGUtZDQ4MWViZTFkOGRmIiwidXNlcm5hbWUiOiJkOGNmODQ4Ni1jMWE2LTRiZDEtOGE2OS02YTU2MjU1MTk2MDkiLCJleHAiOjE1MzA4OTcwMjEsImVtYWlsIjoiIn0.l9Md2sKu_pNRL8oQ2t7qlCctNdBxeAfUag9J_17C5wU",
+        "sWrw39earnNgEvqzmcKcRg", monitoring=True)
     auklet_monitoring.start()
     main()
     auklet_monitoring.stop()
