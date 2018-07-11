@@ -78,16 +78,14 @@ Tkinter reference:
 
 
 try:  # Python 3  # create2api library is not compatible in it's current form
+    import Tkinter
+    import ttk
     from tkinter import ttk
     from tkinter import *  # causes tk widgets to be upgraded by ttk widgets
     import datetime
     from Tkinter import font
-
-except ImportError:  # Python 2
     import sys, traceback  # trap exceptions
     import os  # switch off auto key repeat
-    import Tkinter
-    import ttk
     from Tkinter import *  # causes tk widgets to be upgraded by ttk widgets
     import tkFont as font  # button font sizing
     import json  # Create2API JSON file
