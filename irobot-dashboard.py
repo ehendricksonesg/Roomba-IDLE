@@ -138,7 +138,7 @@ class Dashboard():
         self.driveright = False
 
     def on_keypress(self, event):
-        # print "Key pressed ", repr(event.char)
+        print("Key pressed "), repr(event.char)
 
     def on_leftkey(self, event):
         # print "Left"
