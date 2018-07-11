@@ -115,49 +115,49 @@ class Dashboard():
         os.system('xset -r off')  # turn off auto repeat key
         
     def on_press_driveforward(self, event):
-        print "Forward"
+        # print "Forward"
         self.driveforward = True
 
     def on_press_drivebackward(self, event):
-        print "Backward"
+        # print "Backward"
         self.drivebackward = True
 
     def on_press_driveleft(self, event):
-        print "Left"
+        # print "Left"
         self.driveleft = True
 
     def on_press_driveright(self, event):
-        print "Right"
+        # print "Right"
         self.driveright = True
 
     def on_press_stop(self, event):
-        print "Stop"
+        # print "Stop"
         self.driveforward = False
         self.drivebackward = False
         self.driveleft = False
         self.driveright = False
 
     def on_keypress(self, event):
-        print "Key pressed ", repr(event.char)
+        # print "Key pressed ", repr(event.char)
 
     def on_leftkey(self, event):
-        print "Left"
+        # print "Left"
         self.driveleft = True
 
     def on_rightkey(self, event):
-        print "Right"
+        # print "Right"
         self.driveright = True
 
     def on_upkey(self, event):
-        print "Forward"       
+        # print "Forward"
         self.driveforward = True
         
     def on_downkey(self, event):
-        print "Backward"
+        # print "Backward"
         self.drivebackward = True
 
     def on_keyrelease(self, event):
-        print "Stop"
+        # print "Stop"
         self.driveforward = False
         self.drivebackward = False
         self.driveleft = False
@@ -244,7 +244,7 @@ class Dashboard():
     def on_exit(self):
         # Uses 'import tkMessageBox as messagebox' for Python2 or 'import tkMessageBox' for Python3 and 'root.protocol("WM_DELETE_WINDOW", on_exit)'
         #if messagebox.askokcancel("Quit", "Do you want to quit?"):
-        print "Exiting irobot-dashboard"
+        # print "Exiting irobot-dashboard"
         os.system('set -r on') # turn on auto repeat key
         self.exitflag = True
         #GPIO.cleanup()
@@ -259,7 +259,7 @@ class Dashboard():
     def on_mode_change(self, *args):
         self.ledsource.set('mode')
         self.modeflag.set(True)
-        print "OI mode change from " +  self.mode.get() + " to " + self.chgmode.get()
+        # print "OI mode change from " +  self.mode.get() + " to " + self.chgmode.get()
             
     def on_led_change(self, *args):
         self.ledsource.set('test')
@@ -816,13 +816,13 @@ def RetrieveCreateTelemetrySensors(dashboard):
         
         if dashboard.dataconn.get() == True:
 
-            print "Attempting data link connection"
+            # print "Attempting data link connection"
             dashboard.comms_check(-1)
             dashboard.master.update()
             
             bot = create2api.Create2()
             bot.digit_led_ascii('    ') # clear DSEG before Passive mode
-            print "Issuing a Start()"
+            # print "Issuing a Start()"
             bot.start()                 # issue passive mode command
             #bot.safe()
             dist = 0                    # reset odometer
@@ -835,14 +835,14 @@ def RetrieveCreateTelemetrySensors(dashboard):
                     time.sleep(0.25)
                     if timelimit(1, bot.get_packet, (100, ), {}) == False:  # run bot.get_packet(100) with a timeout
 
-                        print "Data link down"
+                        # print "Data link down"
                         dashboard.comms_check(0)
                         bot.destroy()
                         if connection_attempt > 5:
                             connection_attempt = 0
-                            print "Attempted 6 communication connections... sleeping for 6 mins..."
+                            # print "Attempted 6 communication connections... sleeping for 6 mins..."
                             time.sleep(360)
-                        print "Simulating a Clean button press"
+                        # print "Simulating a Clean button press"
                         GPIO.output(CLNpin, GPIO.HIGH) # Single press of Clean button enters Passive mode
                         time.sleep(.2)
                         GPIO.output(CLNpin, GPIO.LOW)  # Clean button activates on button 'release'
@@ -854,11 +854,11 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         # DATA LINK
                         connection_attempt = 0
                         if dashboard.dataconn.get() == True:
-                            print "Data link up"
+                            # print "Data link up"
                             dashboard.dataconn.set(False)
 
                         if dashboard.dataretry.get() == True:   # retry an unstable (green) connection
-                            print "Data link reconnect"
+                            # print "Data link reconnect"
                             dashboard.dataretry.set(False)
                             dashboard.dataconn.set(True)
                             dashboard.comms_check(0)
@@ -880,10 +880,10 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         # (BRC pin pulse to prevent sleep not working for me)
                         if datetime.datetime.now() > BtnTimer:
                             GPIO.output(BRCpin, GPIO.LOW)
-                            print 'BRC pin pulse'
+                            # print 'BRC pin pulse'
                             BtnTimer = datetime.datetime.now() + datetime.timedelta(seconds=30)
                             if docked:
-                                print 'Dock'
+                                # print 'Dock'
                                 bot.buttons(4) # 1=Clean 2=Spot 4=Dock 8=Minute 16=Hour 32=Day 64=Schedule 128=Clock
                             # switch to safe mode if undocked and detects OI mode is Passive
                             # (no longer required with Clean button press simulation)
@@ -1123,8 +1123,8 @@ def RetrieveCreateTelemetrySensors(dashboard):
                         dashboard.master.update() # inner loop to update dashboard telemetry
 
                 except Exception: #, e:
-                    print "Aborting telemetry loop"
-                    #print sys.stderr, "Exception: %s" % str(e)
+                    # print "Aborting telemetry loop"
+                    # print sys.stderr, "Exception: %s" % str(e)
                     traceback.print_exc(file=sys.stdout)
                     break
                     
