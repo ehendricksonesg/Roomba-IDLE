@@ -81,6 +81,7 @@ try:  # Python 3  # create2api library is not compatible in it's current form
     from tkinter import ttk
     from tkinter import *  # causes tk widgets to be upgraded by ttk widgets
     import datetime
+    from Tkinter import font
 
 except ImportError:  # Python 2
     import sys, traceback  # trap exceptions
@@ -98,7 +99,6 @@ except ImportError:  # Python 2
     import RPi.GPIO as GPIO  # BRC pin pulse
     import csv
     from auklet.monitoring import Monitoring
-    from Tkinter import font
 
 
 class Dashboard():
