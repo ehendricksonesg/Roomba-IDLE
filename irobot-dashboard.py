@@ -1155,7 +1155,7 @@ def main():
     
 
 if __name__ == '__main__':
-    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYWRjYjRiNGQtMDliOC00MWE5LTk5NzAtMGI5YWUwNzA3ZjlhIiwidXNlcm5hbWUiOiI1ODBjMmNkNS00Mzg2LTRkNDYtOGNmMi03NWY3ZjMxYjY1NTAiLCJleHAiOjE1MzA5MDAzNTcsImVtYWlsIjoiIn0.aJ_K4D8fFCprWDajtdA6qJD3KIETnOyBGnNauNT3BY0", "qXa285XCSPnQTk7aYXe5TN", monitoring=True)
+    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
     auklet_monitoring.start()
     main()
     auklet_monitoring.stop()
