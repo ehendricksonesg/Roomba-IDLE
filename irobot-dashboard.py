@@ -98,6 +98,7 @@ except ImportError:         # Python 2
     import RPi.GPIO as GPIO # BRC pin pulse
     import csv
     from auklet.monitoring import Monitoring
+    from tkinter import font
 
 
 class Dashboard():
