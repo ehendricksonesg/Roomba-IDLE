@@ -76,6 +76,7 @@ Tkinter reference:
 #logging.basicConfig(level=logging.DEBUG,
 #                    format='(%(threadName)-10s) %(message)s')
 
+from tkinter import font
 
 try:                        # Python 3  # create2api library is not compatible in it's current form
     from tkinter import ttk
@@ -98,7 +99,6 @@ except ImportError:         # Python 2
     import RPi.GPIO as GPIO # BRC pin pulse
     import csv
     from auklet.monitoring import Monitoring
-    from tkinter import font
 
 
 class Dashboard():
