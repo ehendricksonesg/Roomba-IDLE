@@ -1116,10 +1116,13 @@ def RetrieveCreateTelemetrySensors(dashboard):
 
                         # 7 SEGMENT DISPLAY
                         #bot.digit_led_ascii("abcd")
-                        if dashboard.ledsource.get() == 'test':
+                        #The following two lines pull battery data to the 7-seg display (replacing manual)
+                        dis_bat = str(bot.sensor_state['battery charge'])
+                        bot.digit_led_ascii(dis_bat)
+                        """if dashboard.ledsource.get() == 'test':
                             bot.digit_led_ascii(dashboard.DSEG.get().rjust(4))  # rjustify and pad to 4 chars
                         elif dashboard.ledsource.get() == 'mode':
-                            bot.digit_led_ascii(dashboard.mode.get()[:4].rjust(4))  # rjustify and pad to 4 chars
+                            bot.digit_led_ascii(dashboard.mode.get()[:4].rjust(4))"""  # rjustify and pad to 4 chars
                                 
                         dashboard.master.update() # inner loop to update dashboard telemetry
 
@@ -1147,7 +1150,6 @@ def main():
     
     dashboard=Dashboard(root)                       # paint GUI
     RetrieveCreateTelemetrySensors(dashboard)       # comms with iRobot
-    #bigbatts()
 
     # root.update_idletasks() # does not block code execution
     # root.update([msecs, function]) is a loop to run function after every msec
