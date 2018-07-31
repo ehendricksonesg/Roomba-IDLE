@@ -98,7 +98,7 @@ import threading        # used to timeout Create2 function calls if iRobot has g
 import math             # direction indicator (polygon) rotation
 import RPi.GPIO as GPIO # BRC pin pulse
 import csv
-from auklet.monitoring import Monitoring
+# from auklet.monitoring import Monitoring
 
 
 class Dashboard():
@@ -1158,7 +1158,7 @@ def main():
     
 
 if __name__ == '__main__':
-    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
-    auklet_monitoring.start()
+    # auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
+    # auklet_monitoring.start()
     main()
-    auklet_monitoring.stop()
+    # auklet_monitoring.stop()
