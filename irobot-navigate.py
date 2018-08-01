@@ -1533,7 +1533,7 @@ def iRobotTelemetry(dashboard):
                                     dashboard.map_place_piece("irobot", dashboard.goal_posn[1], dashboard.goal_posn[0])
                                     dashboard.map_place_piece("goal", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                                     floorplan.run(dashboard, bot, return_path=True, prnt=False, demo=False, alarm=False)
-                                dashboard.runwavefront = False
+                                dashboard.runwavefront = True # Note: Loopage (Original=False) (True=Loop)
                                 dashboard.on_press_start()
                                 dashboard.on_press_start()                      
 
