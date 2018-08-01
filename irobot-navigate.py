@@ -123,7 +123,7 @@ class Dashboard():
             self.runwavefront = True
         elif self.btnwavefront.get() == 'Stop':
             self.btnwavefront.set('Reset')
-            self.runwavefront = False
+            self.runwavefront = True # Note: Loopage (Original=False) (True=Loop)
         elif self.btnwavefront.get() == 'Reset':
             self.btnwavefront.set('Start')
             self.btnForward.configure(state=NORMAL)            
@@ -1533,7 +1533,7 @@ def iRobotTelemetry(dashboard):
                                     dashboard.map_place_piece("irobot", dashboard.goal_posn[1], dashboard.goal_posn[0])
                                     dashboard.map_place_piece("goal", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                                     floorplan.run(dashboard, bot, return_path=True, prnt=False, demo=False, alarm=False)
-                                dashboard.runwavefront = True # Note: Loopage (Original=False) (True=Loop)
+                                dashboard.runwavefront = False
                                 dashboard.on_press_start()
                                 dashboard.on_press_start()                      
 
