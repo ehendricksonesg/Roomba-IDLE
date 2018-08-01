@@ -841,12 +841,6 @@ class WavefrontMachine:
         current_robot_col = 0
         later_robot_row = 0                # 2nd move ahead
         later_robot_col = 0                # 2nd move ahead
-        with open('battery.csv', "a") as output:  # BATTERY pull
-            bat = str(bot.sensor_state['current'])
-            fieldnames = ['var1']
-            writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
-            # writer.writeheader()
-            writer.writerow({'var1': bat})
 
         # set irobot starting position orientation in degrees
         if not return_path:
@@ -1299,6 +1293,12 @@ class WavefrontMachine:
         return self.__minimum_node
 
     def printMap(self):
+        with open('battery.csv', "a") as output:  # BATTERY pull
+            bat = str(bot.sensor_state['current'])
+            fieldnames = ['var1']
+            writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
+            # writer.writeheader()
+            writer.writerow({'var1': bat})
         """
         Prints out the map of this instance of the class.
         """
