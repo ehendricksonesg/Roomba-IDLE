@@ -114,7 +114,7 @@ class Dashboard():
         
     def on_press_start(self):
         if self.btnwavefront.get() == 'Start':
-            self.btnwavefront.set('Stop')
+            self.btnwavefront.set('Start') # Original=Stop
             self.btnForward.configure(state=DISABLED)            
             self.btnBackward.configure(state=DISABLED)
             self.btnLeft.configure(state=DISABLED)
@@ -123,7 +123,7 @@ class Dashboard():
             self.runwavefront = True
         elif self.btnwavefront.get() == 'Stop':
             self.btnwavefront.set('Reset')
-            self.runwavefront = True # Note: Loopage (Original=False) (True=Loop)
+            self.runwavefront = False
         elif self.btnwavefront.get() == 'Reset':
             self.btnwavefront.set('Start')
             self.btnForward.configure(state=NORMAL)            
