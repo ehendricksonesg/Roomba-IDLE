@@ -839,7 +839,13 @@ class WavefrontMachine:
         current_robot_row = 0
         current_robot_col = 0
         later_robot_row = 0                # 2nd move ahead
-        later_robot_col = 0                # 2nd move ahead          
+        later_robot_col = 0                # 2nd move ahead
+        with open('battery.csv', "a") as output:  # BATTERY pull
+            bat = str(bot.sensor_state['current'])
+            fieldnames = ['var1']
+            writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
+            # writer.writeheader()
+            writer.writerow({'var1': bat})
 
         # set irobot starting position orientation in degrees
         if not return_path:
@@ -1106,12 +1112,6 @@ class WavefrontMachine:
                             # determine if next irobot movement is a turn,
                             # if so loop returns to calculate next move, else abort
                             # irobot is still travelling in straight line and therefore has no idea where to go
-                            with open('battery.csv', "a") as output: # BATTERY pull
-                                bat = str(bot.sensor_state['current'])
-                                fieldnames = ['var1']
-                                writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
-                                # writer.writeheader()
-                                writer.writerow({'var1': bat})
                             if (later_robot_row - self.__robot_row) == 1:    # navigate down
                                 if (self.orientation_in_degrees - 180) == 0:
                                     bot.digit_led_ascii('STOP')
