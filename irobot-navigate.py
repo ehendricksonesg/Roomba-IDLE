@@ -1499,7 +1499,7 @@ def iRobotTelemetry(dashboard):
                                 dashboard.map_place_piece("irobot", dashboard.goal_posn[1], dashboard.goal_posn[0])
                                 dashboard.map_place_piece("goal", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                                 floorplan.run(dashboard, bot, return_path=True, prnt=True, demo=True)
-                            dashboard.rundemo = False
+                            dashboard.rundemo = True
                             dashboard.map_place_piece("irobot", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                             dashboard.map_place_piece("goal", dashboard.goal_posn[1], dashboard.goal_posn[0])
 
