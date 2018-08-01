@@ -95,7 +95,7 @@ except ImportError:         # Python 2
     import time             # sleep function
     import threading        # used to timeout Create2 function calls if iRobot has gone to sleep
     import RPi.GPIO as GPIO # BRC pin pulse
-    # from auklet.monitoring import Monitoring
+    from auklet.monitoring import Monitoring
 
 
 class Dashboard():
@@ -114,7 +114,7 @@ class Dashboard():
         
     def on_press_start(self):
         if self.btnwavefront.get() == 'Start':
-            self.btnwavefront.set('Start') # Original=Stop
+            self.btnwavefront.set('Start') # Original=Stop Note: This is what worked for loopage
             self.btnForward.configure(state=DISABLED)            
             self.btnBackward.configure(state=DISABLED)
             self.btnLeft.configure(state=DISABLED)
@@ -1676,7 +1676,7 @@ def main():
     
 
 if __name__ == '__main__': 
-    # auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
-    # auklet_monitoring.start()
+    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
+    auklet_monitoring.start()
     main()
-    # auklet_monitoring.stop()
+    auklet_monitoring.stop()
