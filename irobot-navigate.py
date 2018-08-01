@@ -1499,7 +1499,7 @@ def iRobotTelemetry(dashboard):
                                 dashboard.map_place_piece("irobot", dashboard.goal_posn[1], dashboard.goal_posn[0])
                                 dashboard.map_place_piece("goal", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                                 floorplan.run(dashboard, bot, return_path=True, prnt=True, demo=True)
-                            dashboard.rundemo = True
+                            dashboard.rundemo = False
                             dashboard.map_place_piece("irobot", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                             dashboard.map_place_piece("goal", dashboard.goal_posn[1], dashboard.goal_posn[0])
 
@@ -1512,7 +1512,8 @@ def iRobotTelemetry(dashboard):
                                 dashboard.map_place_piece("irobot", dashboard.goal_posn[1], dashboard.goal_posn[0])
                                 dashboard.map_place_piece("goal", dashboard.irobot_posn[1], dashboard.irobot_posn[0])
                                 floorplan.run(dashboard, bot, return_path=True, prnt=False, demo=False, alarm=False)
-                            dashboard.runwavefront = False
+                            time.sleep(5)
+                            dashboard.runwavefront = True # Note: Loopage (Original=False) (True=Loop)
                             dashboard.on_press_start()                      
 
                         elif (datetime.datetime.now() > schedule_time and \
