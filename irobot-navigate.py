@@ -1390,12 +1390,6 @@ def iRobotTelemetry(dashboard):
     GPIO.output(BRCpin, GPIO.HIGH)   # rest state
 
     while True and not dashboard.exitflag: # outer loop to handle data link retry connect attempts
-        with open('battery.csv', "a") as output:  # BATTERY pull
-            bat = str(bot.sensor_state['current'])
-            fieldnames = ['var1']
-            writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
-            # writer.writeheader()
-            writer.writerow({'var1': bat})
         
         if dashboard.dataconn.get() == True:
 
@@ -1431,6 +1425,12 @@ def iRobotTelemetry(dashboard):
             while True and not dashboard.exitflag:
                         
                 try:
+                    with open('battery.csv', "a") as output:
+                        bat = str(bot.sensor_state['current'])
+                        fieldnames = ['var1']
+                        writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
+                        # writer.writeheader()
+                        writer.writerow({'var1': bat}) # Battery pull
 
                     # this binding will cause a map refresh if the user interactively changes the window size
                     dashboard.master.bind('<Configure>', dashboard.on_map_refresh)
