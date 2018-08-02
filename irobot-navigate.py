@@ -347,12 +347,12 @@ class Dashboard():
                          [000,999,999,000,000,999,000,000,000,000,999,000],
                          [000,000,000,999,000,000,000,999,000,999,000,000]]
 
-        self.floormap = [[999, 999, 999, 999, 999, 000, 999, 999, 999, 000, 999, 999],
-                         [999, 000, 000, 000, 999, 000, 999, 000, 000, 000, 999, 999],
-                         [999, 000, 999, 000, 999, 000, 999, 999, 000, 000, 999, 999],
-                         [999, 254, 999, 001, 999, 000, 999, 000, 000, 000, 999, 999],
-                         [999, 999, 999, 999, 999, 000, 999, 999, 999, 000, 999, 999],
-                         [999, 999, 999, 999, 999, 000, 000, 000, 000, 000, 999, 999]] # Each cell is about 1.125x1.125 ft^2
+        self.floormap = [[999, 999, 999, 999, 999, 999, 999, 999, 000, 999, 999, 999],
+                         [999, 999, 999, 999, 999, 999, 999, 999, 000, 999, 000, 000],
+                         [999, 999, 999, 999, 999, 999, 999, 999, 000, 999, 999, 000],
+                         [999, 254, 000, 000, 000, 000, 001, 999, 000, 999, 000, 000],
+                         [999, 999, 999, 999, 999, 999, 999, 999, 000, 999, 999, 999],
+                         [999, 999, 999, 999, 999, 999, 999, 999, 000, 000, 000, 000]] # Each cell is about 1.125x1.125 ft^2
 
 
         """self.floormap = [[999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999, \
@@ -1037,7 +1037,7 @@ class WavefrontMachine:
                 else:
                     # if irobot reaches goal 2 moves out and
                     # is on a return path back to a docking station then dock
-                    if later_robot_row == self.__goal_row and \
+                    """if later_robot_row == self.__goal_row and \
                        later_robot_col == self.__goal_col and \
                        dashboard.isdocked and return_path:
                         self.__robot_row = self.__goal_row
@@ -1045,7 +1045,7 @@ class WavefrontMachine:
                         dashboard.chgmode.set('Seek Dock')
                         dist = 1000
                     else:
-                        bot.drive(int(dashboard.speed.get()), 32767) #forward
+                        bot.drive(int(dashboard.speed.get()), 32767) #forward"""
 
                 while dist < (dashboard.unitsize - int(dashboard.speed.get())/3.5) and dashboard.runwavefront:
                     timelimit(1, bot.get_packet, (19, ), {})
