@@ -348,10 +348,10 @@ class Dashboard():
                          [000,000,000,999,000,000,000,999,000,999,000,000]]
 
         self.floormap = [[999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999],
-                         [999, 000, 000, 000, 000, 000, 000, 000, 000, 000, 000, 999],
-                         [999, 000, 999, 999, 999, 999, 999, 999, 999, 999, 000, 999],
-                         [999, 000, 999, 999, 999, 999, 999, 999, 999, 999, 000, 999],
-                         [999, 254, 999, 999, 999, 999, 999, 999, 999, 999, 001, 999],
+                         [999, 000, 000, 000, 000, 000, 000, 999, 000, 000, 000, 999],
+                         [999, 000, 999, 999, 999, 999, 000, 999, 999, 999, 000, 999],
+                         [999, 000, 999, 999, 999, 999, 000, 999, 999, 999, 000, 999],
+                         [999, 254, 999, 999, 999, 999, 001, 999, 999, 999, 000, 999],
                          [999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999]] # Each cell is about 1.125x1.125 ft^2
 
 
@@ -1430,7 +1430,7 @@ def iRobotTelemetry(dashboard):
                         fieldnames = ['var1']
                         writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                         # writer.writeheader()
-                        writer.writerow({'var1': bat}) # Battery pull
+                        writer.writerow({'var1': bat}) # Battery pull WORKS!
 
                     # this binding will cause a map refresh if the user interactively changes the window size
                     dashboard.master.bind('<Configure>', dashboard.on_map_refresh)
