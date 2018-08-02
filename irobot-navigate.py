@@ -1009,7 +1009,7 @@ class WavefrontMachine:
                     
                 # does irobot needs to counter rotate after a prior bump rotation
                 # or is irobot running adjacent a wall
-                if counter_rotate_adjustment:
+                """if counter_rotate_adjustment:
                     bot.digit_led_ascii(' ADJ')
                     print "Orientation adjustment..."
                     self.irobot_rotate(bot, int(rotation_angle * -1 / 2)) # counter rotate
@@ -1021,7 +1021,7 @@ class WavefrontMachine:
                 elif adjacent_wall == 'Starboard':
                     bot.digit_led_ascii('HUG-')
                     print "Hug right wall..."
-                    self.irobot_rotate(bot, -2) # rotate clockwise
+                    self.irobot_rotate(bot, -2) # rotate clockwise"""
 
                 # navigate irobot ahead one unit
                 bot.digit_led_ascii('FWRD')
@@ -1037,7 +1037,7 @@ class WavefrontMachine:
                 else:
                     # if irobot reaches goal 2 moves out and
                     # is on a return path back to a docking station then dock
-                    """if later_robot_row == self.__goal_row and \
+                    if later_robot_row == self.__goal_row and \
                        later_robot_col == self.__goal_col and \
                        dashboard.isdocked and return_path:
                         self.__robot_row = self.__goal_row
@@ -1045,7 +1045,7 @@ class WavefrontMachine:
                         dashboard.chgmode.set('Seek Dock')
                         dist = 1000
                     else:
-                        bot.drive(int(dashboard.speed.get()), 32767) #forward"""
+                        bot.drive(int(dashboard.speed.get()), 32767) #forward
 
                 while dist < (dashboard.unitsize - int(dashboard.speed.get())/3.5) and dashboard.runwavefront:
                     timelimit(1, bot.get_packet, (19, ), {})
