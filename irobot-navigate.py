@@ -96,7 +96,7 @@ except ImportError:         # Python 2
     import threading        # used to timeout Create2 function calls if iRobot has gone to sleep
     import RPi.GPIO as GPIO # BRC pin pulse
     import csv
-    from auklet.monitoring import Monitoring
+    # from auklet.monitoring import Monitoring
 
 
 class Dashboard():
@@ -1190,9 +1190,9 @@ class WavefrontMachine:
                 
         if dashboard.runwavefront:
             #bot.play_song(0,'A4,40,A4,40,A4,40,F4,30,C5,10,A4,40,F4,30,C5,10,A4,80') 
-            #if alarm: bot.play_song(0,'C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,G5,5,E5,10,G5,5,E5,10,G5,5,E5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,G5,5,E5,10,G5,5,E5,10,G5,5,E5,10,C5,45')
+            #(Original) if alarm: bot.play_song(0,'C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,G5,5,E5,10,G5,5,E5,10,G5,5,E5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,C5,5,C5,10,G5,5,E5,10,G5,5,E5,10,G5,5,E5,10,C5,45')
             #if alarm: bot.play_test_sound() 
-            if alarm: bot.play_song(0,'B6,5,rest,6,A6,5,rest,7,G6,5,rest,8,F6,5,rest,9,E6,5,rest,10,D6,5,rest,11,C6,5,rest,12,B6,5,rest,13,A6,5,rest,14,B5,5,rest,15,A5,5,rest,16,G5,5,rest,17,F5,5,rest,18,E5,5,rest,19,D5,5,rest,20,C5,5,rest,21,B5,5,rest,22,A5,5,rest,23,B4,5,rest,24,A4,5,rest,25,G4,5,rest,26,F4,5,rest,27,E4,5,rest,28,D4,5,rest,29,C4,5')
+            if alarm: bot.play_song(0,'C4')# 5,rest,6,A6,5,rest,7,G6,5,rest,8,F6,5,rest,9,E6,5,rest,10,D6,5,rest,11,C6,5,rest,12,B6,5,rest,13,A6,5,rest,14,B5,5,rest,15,A5,5,rest,16,G5,5,rest,17,F5,5,rest,18,E5,5,rest,19,D5,5,rest,20,C5,5,rest,21,B5,5,rest,22,A5,5,rest,23,B4,5,rest,24,A4,5,rest,25,G4,5,rest,26,F4,5,rest,27,E4,5,rest,28,D4,5,rest,29,C4,5')
         elif not dashboard.rundemo:
             print "Aborting Wavefront"
             bot.play_song(0,'G3,16,C3,32')
@@ -1683,7 +1683,7 @@ def main():
     
 
 if __name__ == '__main__': 
-    auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
-    auklet_monitoring.start()
+    # auklet_monitoring = Monitoring("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjI1NjI5MjEtZWQ5Ny00ZDhmLTg0YTgtMDQ4OTExMTJlYmVlIiwidXNlcm5hbWUiOiIxNmNhZWJmMC1kMGQ1LTQzMTEtYTJhNC00ZTE4NWFhMmJjOWMiLCJleHAiOjE1MzE0MjA0MjIsImVtYWlsIjoiIn0.MlTVeAolR6ZQQ0vDX2i37JwpENSYpJELod4KrVHYXgQ", "maEBVG9wpKPEdWyXtXdmuP", monitoring=True)
+    # auklet_monitoring.start()
     main()
-    auklet_monitoring.stop()
+    # auklet_monitoring.stop()
