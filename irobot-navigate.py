@@ -1474,8 +1474,20 @@ def iRobotTelemetry(dashboard):
 
                         if dashboard.rbcomms.cget('state') == "normal":  # flash radio button
                             dashboard.comms_check(-1)
+                            with open('battery.csv', "a") as output:
+                                bat = str(bot.sensor_state['current'])
+                                fieldnames = ['var1']
+                                writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
+                                # writer.writeheader()
+                                writer.writerow({'var1': bat})  # Battery pull WORKS!
                         else:
                             dashboard.comms_check(1)
+                            with open('battery.csv', "a") as output:
+                                bat = str(bot.sensor_state['current'])
+                                fieldnames = ['var1']
+                                writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
+                                # writer.writeheader()
+                                writer.writerow({'var1': bat})  # Battery pull WORKS!
 
 
                         # WAVEFRONT
