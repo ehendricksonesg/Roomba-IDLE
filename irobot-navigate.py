@@ -96,7 +96,7 @@ except ImportError:         # Python 2
     import threading        # used to timeout Create2 function calls if iRobot has gone to sleep
     import RPi.GPIO as GPIO # BRC pin pulse
     import csv
-    from auklet.monitoring import Monitoring
+    # from auklet.monitoring import Monitoring
 
 
 class Dashboard():
