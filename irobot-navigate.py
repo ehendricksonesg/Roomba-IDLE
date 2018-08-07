@@ -1427,7 +1427,7 @@ def iRobotTelemetry(dashboard):
                         
                 try:
                     with open('battery.csv', "a") as output:
-                        bat = str(bot.sensor_state['capacity'])
+                        bat = str(bot.sensor_state['battery charge'])
                         fieldnames = ['var1']
                         writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                         # writer.writeheader()
@@ -1475,7 +1475,7 @@ def iRobotTelemetry(dashboard):
                         if dashboard.rbcomms.cget('state') == "normal":  # flash radio button
                             dashboard.comms_check(-1)
                             with open('battery.csv', "a") as output:
-                                bat = str(bot.sensor_state['capacity'])
+                                bat = str(bot.sensor_state['battery charge'])
                                 fieldnames = ['var1']
                                 writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                                 # writer.writeheader()
@@ -1483,7 +1483,7 @@ def iRobotTelemetry(dashboard):
                         else:
                             dashboard.comms_check(1)
                             with open('battery.csv', "a") as output:
-                                bat = str(bot.sensor_state['capacity'])
+                                bat = str(bot.sensor_state['battery charge'])
                                 fieldnames = ['var1']
                                 writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')
                                 # writer.writeheader()
